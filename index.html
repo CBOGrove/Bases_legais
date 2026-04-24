@@ -226,6 +226,15 @@
             padding-top: 1rem;
         }
 
+        /* En PC, el separador de fechas visible y todo en línea */
+        .actualizacion .sep-fecha {
+            display: inline;
+        }
+        .actualizacion .fecha-gl,
+        .actualizacion .fecha-es {
+            display: inline;
+        }
+
         .contedor-burbullas {
             display: flex;
             flex-direction: column;
@@ -284,6 +293,15 @@
                 display: none;
             }
             .contacto .datos-contacto .br-movil {
+                display: block;
+            }
+
+            /* Fechas: forzamos salto de línea en móvil, ocultamos el punto */
+            .actualizacion .sep-fecha {
+                display: none;
+            }
+            .actualizacion .fecha-gl,
+            .actualizacion .fecha-es {
                 display: block;
             }
         }
@@ -571,7 +589,7 @@
     </div>
 
     <div class="actualizacion">
-        Bases legais actualizadas a marzo de 2026 · Bases legales actualizadas a marzo de 2026
+        <span class="fecha-gl">Bases legais actualizadas a marzo de 2026</span><span class="sep-fecha"> · </span><span class="fecha-es">Bases legales actualizadas a marzo de 2026</span>
     </div>
 
 </div>
