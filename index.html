@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="gl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bases Legais · Club Baloncesto O Grove</title>
+    <style>
+        :root {
+            /* 🔧 AJUSTA AQUÍ LA VISIBILIDAD Y ROTACIÓN DEL LOGO DE FONDO */
+            --logo-opacidad: 0.75;   /* 0 = invisible, 1 = máxima presencia */
+            --logo-rotacion: 0deg;   /* 0deg = recto, positivo = inclinado derecha */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ===== LOGO FIJO DE FONDO ===== */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('https://drive.google.com/thumbnail?id=1J0OHas0Yq2iRf8eyetWZYkQjnQTJULYJ&sz=w1200');
+            background-size: auto 90%;
+            background-repeat: no-repeat;
+            background-position: center center;
+            opacity: var(--logo-opacidad);
+            transform: rotate(var(--logo-rotacion));
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Liberation Serif', Georgia, serif;
+            background: linear-gradient(145deg, #f8f9fc 0%, #eef2f7 100%);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .documento {
+            max-width: 1100px;
+            width: 100%;
+            background: rgba(255,255,255,0.75);
+            backdrop-filter: blur(2px);
+            border-radius: 25px;
+            box-shadow: 0 20px 40px -12px rgba(0,20,30,0.3),
+                        0 0 0 1px rgba(255,255,255,0.6) inset;
+            padding: 2.5rem 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cabecera {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 3px double #1e3a5f;
+            box-shadow: inset 0 -4px 6px -2px rgba(30,58,95,0.08);
+        }
+
+        .cabecera h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #0b2a4a;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 0 rgba(255,255,255,0.8);
+            letter-spacing: -0.5px;
+        }
+
+        .cabecera h2 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: #2c3e6d;
+            font-style: italic;
+        }
+
+        .separador-idioma {
+            background: #1e3a5f;
+            color: white;
+            text-align: center;
+            padding: 0.8rem;
+            border-radius: 60px;
+            margin: 2rem 0 1.5rem 0;
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            border: 2px solid #c9a03d;
+        }
+
+        .separador-idioma span {
+            background: #c9a03d;
+            color: #1e3a5f;
+            padding: 0.3rem 1.5rem;
+            border-radius: 40px;
+            font-weight: bold;
+        }
+
+        .burbulla {
+            background: #ffffffdd;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(30, 58, 95, 0.2);
+            border-radius: 25px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 18px -6px rgba(0,32,64,0.15),
+                        0 0 0 1px rgba(255,255,255,0.7) inset;
+        }
+
+        .burbulla h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1e3a5f;
+            margin-bottom: 1.25rem;
+            border-bottom: 2px dashed #b3c4d4;
+            padding-bottom: 0.5rem;
+        }
+
+        .burbulla p {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+            color: #333;
+        }
+
+        .burbulla p:last-child {
+            margin-bottom: 0;
+        }
+
+        .burbulla strong {
+            color: #1e3a5f;
+        }
+
+        .intro-formal {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .intro-formal p {
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0.8rem 0;
+        }
+
+        li {
+            margin-bottom: 0.6rem;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        li::before {
+            content: "•";
+            color: #c9a03d;
+            font-weight: bold;
+            font-size: 1.8rem;
+            position: absolute;
+            left: 0;
+            top: -0.3rem;
+        }
+
+        .liña-dobre {
+            border: none;
+            border-top: 4px double #808080;
+            margin: 1.8rem 0 2rem 0;
+            opacity: 0.4;
+        }
+
+        /* ===== BLOQUE DE CONTACTO ===== */
+        .contacto {
+            background: #1e3a5f;
+            color: white;
+            border-radius: 25px;
+            padding: 2rem;
+            margin-top: 2rem;
+            text-align: center;
+            border: 2px solid #c9a03d;
+            box-shadow: 0 10px 20px -5px #0b2a4a;
+        }
+
+        .contacto .balon-final {
+            font-size: 1.5rem;
+            display: inline-block;
+            margin-right: 0.3rem;
+        }
+
+        .contacto a {
+            color: #ffd966;
+            text-decoration: none;
+        }
+
+        .contacto a:hover {
+            text-decoration: underline;
+        }
+
+        .actualizacion {
+            text-align: right;
+            font-style: italic;
+            margin-top: 1.5rem;
+            color: #4a5e7a;
+            font-size: 1rem;
+            border-top: 1px dotted #a0b8d0;
+            padding-top: 1rem;
+        }
+
+        .contedor-burbullas {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+
+        /* ===== RESPONSIVO MÓVIL ===== */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+
+            body::before {
+                background-size: auto 55%;
+                opacity: calc(var(--logo-opacidad) * 0.8);
+            }
+
+            .documento {
+                padding: 1.5rem 1rem;
+                box-shadow: 0 10px 20px -8px rgba(0,20,30,0.2),
+                            0 0 0 1px rgba(255,255,255,0.4) inset;
+            }
+
+            .cabecera h1 {
+                font-size: 1.8rem;
+            }
+
+            .cabecera h2 {
+                font-size: 1.3rem;
+            }
+
+            .burbulla {
+                padding: 1.2rem 1.2rem;
+                margin-bottom: 1.2rem;
+            }
+
+            .burbulla h3 {
+                font-size: 1.3rem;
+            }
+
+            li {
+                padding-left: 1.5rem;
+            }
+
+            .contacto {
+                padding: 1.5rem;
+            }
+
+            .separador-idioma {
+                font-size: 1.1rem;
+                padding: 0.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="documento">
+    
+    <!-- CABECEIRA -->
+    <div class="cabecera">
+        <h1>BASES LEGAIS SORTEOS E PROMOCIÓNS</h1>
+        <h2>CLUB BALONCESTO O GROVE</h2>
+    </div>
+
+    <!-- PARTE EN GALEGO -->
+    <div class="separador-idioma">
+        <span>GALEGO</span>
+    </div>
+
+    <div class="contedor-burbullas">
+        <div class="burbulla">
+            <h3>1. ORGANIZACIÓN</h3>
+            <div class="intro-formal">
+                <p>CLUB BALONCESTO O GROVE</p>
+                <p>CIF G-36061034</p>
+                <p>Apartado de Correos 109, 36980 O Grove (Pontevedra)</p>
+                <p><a href="mailto:cbogrove75@gmail.com">cbogrove75@gmail.com</a></p>
+            </div>
+            <p>Organiza sorteos, concursos e promocións a través de redes sociais, instalacións e eventos presenciais. Estas bases son de aplicación xeral, con posibles particularidades en cada convocatoria.</p>
+        </div>
+
+        <div class="burbulla">
+            <h3>2. ÁMBITO TERRITORIAL E TEMPORAL</h3>
+            <p><strong>2.1. Ámbito xeográfico:</strong></p>
+            <ul>
+                <li><strong>Para a participación:</strong> Persoas físicas, sen limitación xeográfica, salvo indicación expresa.</li>
+                <li><strong>Entrega de premios físicos:</strong> España peninsular (exclúense Baleares, Canarias, Ceuta e Melilla).</li>
+                <li><strong>Premios dixitais:</strong> Sen limitación xeográfica.</li>
+            </ul>
+            <p><strong>2.2. Ámbito temporal:</strong> Datas de inicio/fin especificadas en cada publicación. O CLUB pode aprazar, modificar ou cancelar por forza maior.</p>
+        </div>
+
+        <div class="burbulla">
+            <h3>3. CONDICIÓNS DE PARTICIPACIÓN</h3>
+            <p><strong>3.1. Requisitos:</strong> Maiores de 14 anos que cumpran os requisitos específicos. Menores de 18 deben ter autorización de pais/titores legais. O CLUB pode requirir acreditación documental.</p>
+            <p><strong>3.2. Mecánica:</strong> Detallada en cada publicación (like, comentar, seguir, doazón voluntaria...). A participación implica a aceptación íntegra das bases.</p>
+            <p><strong>3.3. Prohibición fraude:</strong></p>
+            <ul>
+                <li>Uso de bots ou automatizacións.</li>
+                <li>Contas falsas ou múltiples identidades.</li>
+                <li>Manipulación do desenvolvemento do sorteo.</li>
+                <li>Participación a través de terceiros.</li>
+            </ul>
+            <p>Exclusión inmediata e posibles accións legais.</p>
+        </div>
+
+        <div class="burbulla">
+            <h3>4. PREMIOS</h3>
+            <p><strong>4.1. Descrición:</strong> Especificada en cada convocatoria.</p>
+            <p><strong>4.2. Características:</strong></p>
+            <ul>
+                <li>Persoal e intransferible.</li>
+                <li>Non se pode cambiar, alterar, devolver nin compensar economicamente.</li>
+                <li>Substitución por outro de similar valor se fose necesario.</li>
+            </ul>
+            <p><strong>4.3. Entrega:</strong></p>
+            <ul>
+                <li>Prioridade: entrega en man en O Grove ou arredores.</li>
+                <li>Posibilidade de entrega por medios informais (amizades, desprazamentos...).</li>
+                <li>Envío por mensaxería a España peninsular (gastos por conta do gañador).</li>
+                <li>Se non é posible a entrega, o premio declararase deserto e pasará ao suplente.</li>
+            </ul>
+        </div>
+
+        <div class="burbulla">
+            <h3>5. SELECCIÓN E NOTIFICACIÓN</h3>
+            <p><strong>5.1. Procedemento:</strong> Sorteo aleatorio con ferramenta externa (Sortea2, EasyPromos, urna física...).</p>
+            <p><strong>5.2. Gañadores:</strong> 1 gañador principal + 2 suplentes (por orde de extracción).</p>
+            <p><strong>5.3. Notificación:</strong> Mensaxe privada na rede social ou medio facilitado. Publicación do nome de usuario sen datos adicionais.</p>
+            <p><strong>5.4. Prazo:</strong> <strong>3 días naturais</strong> para responder e aceptar.</p>
+            <p><strong>5.5. Perda do premio:</strong></p>
+            <ul>
+                <li>Se o gañador non responde, contactase co 1º suplente (3 días).</li>
+                <li>Se este non responde, 2º suplente (3 días).</li>
+                <li>Se ningún responde, premio deserto.</li>
+            </ul>
+        </div>
+
+        <div class="burbulla">
+            <h3>6. PROTECCIÓN DE DATOS (RXPD)</h3>
+            <p><strong>6.1. Responsable:</strong> CLUB BALONCESTO O GROVE, cbogrove75@gmail.com</p>
+            <p><strong>6.2. Finalidades:</strong></p>
+            <ul>
+                <li>Xestionar participación.</li>
+                <li>Contactar co gañador e entregar premio.</li>
+                <li>Publicar nome de usuario (só identificación).</li>
+                <li>Comunicacións sobre o sorteo.</li>
+            </ul>
+            <p><strong>6.3. Conservación:</strong> Necesaria para a promoción e obrigas legais, despois bloqueo e eliminación.</p>
+            <p><strong>6.4. Lexitimación:</strong> Consentimento do participante.</p>
+            <p><strong>6.5. Cesións:</strong> Non se ceden datos a terceiros, agás obriga legal.</p>
+            <p><strong>6.6. Dereitos:</strong> Acceso, rectificación, supresión, oposición, limitación, portabilidade: <a href="mailto:cbogrove75@gmail.com">cbogrove75@gmail.com</a>. Reclamación en <a href="https://www.aepd.es" target="_blank">www.aepd.es</a>.</p>
+        </div>
+
+        <div class="burbulla">
+            <h3>7. CESIÓN DE DEREITOS DE IMAXE E PROPIEDADE INTELECTUAL</h3>
+            <p>Se se achega contido propio (fotos, vídeos...):</p>
+            <ul>
+                <li>Declaración de titularidade lexítima.</li>
+                <li>Orixinalidade e non infracción.</li>
+                <li>Autorización de persoas identificables.</li>
+            </ul>
+            <p>Cesión gratuíta non exclusiva a O CLUB para difusión do sorteo e promoción de actividades deportivas e sociais. Uso non comercial, por tempo indefinido.</p>
+        </div>
+
+        <div class="burbulla">
+            <h3>8. RESPONSABILIDADE E EXENCIÓN</h3>
+            <p><strong>8.1. Plataformas:</strong> Non patrocinado por Instagram, TikTok, YouTube, Twitch, X, etc. Liberación de responsabilidade das redes.</p>
+            <p><strong>8.2. Problemas técnicos:</strong></p>
+            <ul>
+                <li>Erros nos datos de contacto.</li>
+                <li>Caídas de rede ou incidencias externas.</li>
+                <li>Perdas ou roubos en mensaxería.</li>
+            </ul>
+        </div>
+
+        <div class="burbulla">
+            <h3>9. MODIFICACIÓN DAS BASES</h3>
+            <p>O CLUB pode modificalas por causas xustificadas, sen prexuízo de dereitos adquiridos. Publicaranse nos perfís oficiais.</p>
+        </div>
+
+        <div class="burbulla">
+            <h3>10. LEXISLACIÓN E XURISDICIÓN</h3>
+            <p>Lexislación española. Para controversias, xulgados de Cambados (Pontevedra), con renuncia a outro foro.</p>
+        </div>
+
+        <div class="burbulla">
+            <h3>11. ACEPTACIÓN DAS BASES</h3>
+            <p>A participación implica a aceptación íntegra. En caso contrario, absterse de participar.</p>
+        </div>
+    </div>
+
+    <!-- PARTE EN CASTELÁN -->
+    <div class="separador-idioma">
+        <span>CASTELLANO</span>
+    </div>
+
+    <div class="contedor-burbullas">
+        <div class="burbulla">
+            <h3>1. ORGANIZACIÓN</h3>
+            <div class="intro-formal">
+                <p>CLUB BALONCESTO O GROVE</p>
+                <p>CIF G-36061034</p>
+                <p>Apartado de Correos 109, 36980 O Grove (Pontevedra)</p>
+                <p><a href="mailto:cbogrove75@gmail.com">cbogrove75@gmail.com</a></p>
+            </div>
+            <p>Organiza sorteos, concursos y promociones a través de sus perfiles en redes sociales, instalaciones y eventos presenciales. Estas bases son de aplicación general, con posibles particularidades en cada convocatoria.</p>
+        </div>
+
+        <div class="burbulla">
+            <h3>2. ÁMBITO TERRITORIAL Y TEMPORAL</h3>
+            <p><strong>2.1. Ámbito geográfico:</strong></p>
+            <ul>
+                <li><strong>Para la participación:</strong> Personas físicas, sin limitación geográfica, salvo indicación expresa.</li>
+                <li><strong>Entrega de premios físicos:</strong> España peninsular (excluidas Baleares, Canarias, Ceuta y Melilla).</li>
+                <li><strong>Premios digitales:</strong> Sin limitación geográfica.</li>
+            </ul>
+            <p><strong>2.2. Ámbito temporal:</strong> Fechas de inicio/fin especificadas en cada publicación. EL CLUB puede aplazar, modificar o cancelar por fuerza mayor.</p>
+        </div>
+
+        <div class="burbulla">
+            <h3>3. CONDICIONES DE PARTICIPACIÓN</h3>
+            <p><strong>3.1. Requisitos:</strong> Mayores de 14 años que cumplan los requisitos específicos. Menores de 18 deben tener autorización de padres/tutores legales. EL CLUB puede requerir acreditación documental.</p>
+            <p><strong>3.2. Mecánica:</strong> Detallada en cada publicación (like, comentar, seguir, donación voluntaria...). La participación implica la aceptación íntegra de estas bases.</p>
+            <p><strong>3.3. Prohibición fraude:</strong></p>
+            <ul>
+                <li>Uso de bots o automatizaciones.</li>
+                <li>Cuentas falsas o múltiples identidades.</li>
+                <li>Manipulación del desarrollo del sorteo.</li>
+                <li>Participación a través de terceros.</li>
+            </ul>
+            <p>Exclusión inmediata y posibles acciones legales.</p>
+        </div>
+
+        <div class="burbulla">
+            <h3>4. PREMIOS</h3>
+            <p><strong>4.1. Descripción:</strong> Especificada en cada convocatoria.</p>
+            <p><strong>4.2. Características:</strong></p>
+            <ul>
+                <li>Personal e intransferible.</li>
+                <li>No se puede cambiar, alterar, devolver ni compensar económicamente.</li>
+                <li>Sustitución por otro de similar valor si fuese necesario.</li>
+            </ul>
+            <p><strong>4.3. Entrega:</strong></p>
+            <ul>
+                <li>Prioridad: entrega en mano en O Grove o alrededores.</li>
+                <li>Posibilidad de entrega por medios informales (amistades, desplazamientos...).</li>
+                <li>Envío por mensajería a España peninsular (gastos por cuenta del ganador).</li>
+                <li>Si no es posible la entrega, el premio se declara desierto y pasa al suplente.</li>
+            </ul>
+        </div>
+
+        <div class="burbulla">
+            <h3>5. SELECCIÓN Y NOTIFICACIÓN</h3>
+            <p><strong>5.1. Procedimiento:</strong> Sorteo aleatorio con herramienta externa (Sortea2, EasyPromos, urna física...).</p>
+            <p><strong>5.2. Ganadores:</strong> 1 ganador principal + 2 suplentes (por orden de extracción).</p>
+            <p><strong>5.3. Notificación:</strong> Mensaje privado en la red social o medio facilitado. Publicación del nombre de usuario sin datos adicionales.</p>
+            <p><strong>5.4. Plazo:</strong> <strong>3 días naturales</strong> para responder y aceptar.</p>
+            <p><strong>5.5. Pérdida del premio:</strong></p>
+            <ul>
+                <li>Si el ganador no responde, se contacta al 1º suplente (3 días).</li>
+                <li>Si éste no responde, 2º suplente (3 días).</li>
+                <li>Si nadie responde, premio desierto.</li>
+            </ul>
+        </div>
+
+        <div class="burbulla">
+            <h3>6. PROTECCIÓN DE DATOS (RGPD)</h3>
+            <p><strong>6.1. Responsable:</strong> CLUB BALONCESTO O GROVE, cbogrove75@gmail.com</p>
+            <p><strong>6.2. Finalidades:</strong></p>
+            <ul>
+                <li>Gestionar participación.</li>
+                <li>Contactar con el ganador y entregar premio.</li>
+                <li>Publicar nombre de usuario (solo identificación).</li>
+                <li>Comunicaciones sobre el sorteo.</li>
+            </ul>
+            <p><strong>6.3. Conservación:</strong> Necesaria para la promoción y obligaciones legales, después bloqueo y eliminación.</p>
+            <p><strong>6.4. Legitimación:</strong> Consentimiento del participante.</p>
+            <p><strong>6.5. Cesiones:</strong> No se ceden datos a terceros, salvo obligación legal.</p>
+            <p><strong>6.6. Derechos:</strong> Acceso, rectificación, supresión, oposición, limitación, portabilidad: <a href="mailto:cbogrove75@gmail.com">cbogrove75@gmail.com</a>. Reclamación en <a href="https://www.aepd.es" target="_blank">www.aepd.es</a>.</p>
+        </div>
+
+        <div class="burbulla">
+            <h3>7. CESIÓN DE DERECHOS DE IMAGEN Y PROPIEDAD INTELECTUAL</h3>
+            <p>Si se aporta contenido propio (fotos, vídeos...):</p>
+            <ul>
+                <li>Declaración de titularidad legítima.</li>
+                <li>Originalidad y no infracción.</li>
+                <li>Autorización de personas identificables.</li>
+            </ul>
+            <p>Cesión gratuita no exclusiva a EL CLUB para difusión del sorteo y promoción de actividades deportivas y sociales. Uso no comercial, por tiempo indefinido.</p>
+        </div>
+
+        <div class="burbulla">
+            <h3>8. RESPONSABILIDAD Y EXENCIÓN</h3>
+            <p><strong>8.1. Plataformas:</strong> No patrocinado por Instagram, TikTok, YouTube, Twitch, X, etc. Liberación de responsabilidad de las redes.</p>
+            <p><strong>8.2. Problemas técnicos:</strong></p>
+            <ul>
+                <li>Errores en los datos de contacto.</li>
+                <li>Caídas de red o incidencias externas.</li>
+                <li>Pérdidas o robos en mensajería.</li>
+            </ul>
+        </div>
+
+        <div class="burbulla">
+            <h3>9. MODIFICACIÓN DE LAS BASES</h3>
+            <p>EL CLUB puede modificarlas por causas justificadas, sin perjuicio de derechos adquiridos. Se publicarán en los perfiles oficiales.</p>
+        </div>
+
+        <div class="burbulla">
+            <h3>10. LEGISLACIÓN Y JURISDICCIÓN</h3>
+            <p>Legislación española. Para controversias, juzgados de Cambados (Pontevedra), con renuncia a cualquier otro fuero.</p>
+        </div>
+
+        <div class="burbulla">
+            <h3>11. ACEPTACIÓN DE LAS BASES</h3>
+            <p>La participación implica la aceptación íntegra. En caso contrario, abstenerse de participar.</p>
+        </div>
+    </div>
+
+    <hr class="liña-dobre">
+
+    <!-- BLOQUE DE CONTACTO -->
+    <div class="contacto">
+        <p style="font-size:1.3rem; margin-bottom:0.5rem;">
+            <span class="balon-final">🏀</span> <strong>CLUB BALONCESTO O GROVE</strong>
+        </p>
+        <p>📧 <a href="mailto:cbogrove75@gmail.com">cbogrove75@gmail.com</a> · 📮 Apartado de Correos 109, 36980 O Grove (Pontevedra)</p>
+        <p>🌐 @cbogrove en Instagram, TikTok, YouTube, Twitch, X, Kick, Snapchat</p>
+    </div>
+
+    <div class="actualizacion">
+        Bases legais actualizadas a marzo de 2026 · Bases legales actualizadas a marzo de 2026
+    </div>
+
+</div>
+
+</body>
+</html>
