@@ -7,7 +7,7 @@
     <style>
         :root {
             /* 🔧 AJUSTA AQUÍ LA VISIBILIDAD Y ROTACIÓN DEL LOGO DE FONDO */
-            --logo-opacidad: 0.75;   /* 0 = invisible, 1 = máxima presencia */
+            --logo-opacidad: 0.80;   /* 0 = invisible, 1 = máxima presencia */
             --logo-rotacion: 0deg;   /* 0deg = recto, positivo = inclinado derecha */
         }
 
@@ -208,6 +208,14 @@
             text-decoration: underline;
         }
 
+        /* En PC, todo en una línea con separadores */
+        .contacto .datos-contacto .sep {
+            display: inline;
+        }
+        .contacto .datos-contacto .br-movil {
+            display: none;
+        }
+
         .actualizacion {
             text-align: right;
             font-style: italic;
@@ -269,6 +277,14 @@
             .separador-idioma {
                 font-size: 1.1rem;
                 padding: 0.6rem;
+            }
+
+            /* Contacto: forzamos salto de línea en móvil */
+            .contacto .datos-contacto .sep {
+                display: none;
+            }
+            .contacto .datos-contacto .br-movil {
+                display: block;
             }
         }
     </style>
@@ -546,7 +562,11 @@
         <p style="font-size:1.3rem; margin-bottom:0.5rem;">
             <span class="balon-final">🏀</span> <strong>CLUB BALONCESTO O GROVE</strong>
         </p>
-        <p>📧 <a href="mailto:cbogrove75@gmail.com">cbogrove75@gmail.com</a> · 📮 Apartado de Correos 109, 36980 O Grove (Pontevedra)</p>
+        <p class="datos-contacto">
+            📧 <a href="mailto:cbogrove75@gmail.com">cbogrove75@gmail.com</a><span class="sep"> ·</span><br class="br-movil">
+            📮 Apartado de Correos 109, 36980<span class="sep"> ·</span><br class="br-movil">
+            📍 O Grove (Pontevedra)
+        </p>
         <p>🌐 @cbogrove en Instagram, TikTok, YouTube, Twitch, X, Kick, Snapchat</p>
     </div>
 
