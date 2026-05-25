@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bases Legais · Club Baloncesto O Grove</title>
+    <!-- Font Awesome para iconos de redes sociales -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         :root {
             /* 🔧 AJUSTA AQUÍ LA VISIBILIDAD Y ROTACIÓN DEL LOGO DE FONDO */
@@ -181,7 +183,7 @@
             opacity: 0.4;
         }
 
-        /* ===== BLOQUE DE CONTACTO ===== */
+        /* ===== BLOQUE DE CONTACTO MODIFICADO ===== */
         .contacto {
             background: #1e3a5f;
             color: white;
@@ -193,12 +195,6 @@
             box-shadow: 0 10px 20px -5px #0b2a4a;
         }
 
-        .contacto .balon-final {
-            font-size: 1.5rem;
-            display: inline-block;
-            margin-right: 0.3rem;
-        }
-
         .contacto a {
             color: #ffd966;
             text-decoration: none;
@@ -206,6 +202,35 @@
 
         .contacto a:hover {
             text-decoration: underline;
+        }
+
+        .contacto .datos-contacto {
+            margin-bottom: 0.5rem;
+        }
+
+        .contacto .redes-iconos {
+            margin-top: 0.8rem;
+            font-size: 1.5rem;
+            letter-spacing: 0.8rem;
+        }
+
+        .contacto .redes-iconos a {
+            color: white;
+            text-decoration: none;
+            transition: transform 0.2s, color 0.2s;
+            display: inline-block;
+        }
+
+        .contacto .redes-iconos a:hover {
+            color: #ffd966;
+            transform: translateY(-3px);
+            text-decoration: none;
+        }
+
+        .contacto .usuario-redes {
+            font-size: 0.75rem;
+            margin-top: 0.5rem;
+            opacity: 0.8;
         }
 
         /* En PC, todo en una línea con separadores */
@@ -286,6 +311,11 @@
             .separador-idioma {
                 font-size: 1.1rem;
                 padding: 0.6rem;
+            }
+
+            .contacto .redes-iconos {
+                font-size: 1.3rem;
+                letter-spacing: 0.5rem;
             }
 
             /* Contacto: forzamos salto de línea en móvil */
@@ -402,7 +432,7 @@
                 <li>Comunicacións sobre o sorteo.</li>
             </ul>
             <p><strong>6.3. Conservación:</strong> Necesaria para a promoción e obrigas legais, despois bloqueo e eliminación.</p>
-            <p><strong>6.4. Lexitimación:</strong> Consentimento do participante.</p>
+            <p><strong>6.4. Lexitimación:</strong> Consentemento do participante.</p>
             <p><strong>6.5. Cesións:</strong> Non se ceden datos a terceiros, agás obriga legal.</p>
             <p><strong>6.6. Dereitos:</strong> Acceso, rectificación, supresión, oposición, limitación, portabilidade: <a href="mailto:cbogrove75@gmail.com">cbogrove75@gmail.com</a>. Reclamación en <a href="https://www.aepd.es" target="_blank">www.aepd.es</a>.</p>
         </div>
@@ -575,17 +605,39 @@
 
     <hr class="liña-dobre">
 
-<!-- BLOQUE DE CONTACTO -->
-<div class="contacto">
-    <p class="datos-contacto">
-        📧 <a href="mailto:cbogrove75@gmail.com">cbogrove75@gmail.com</a><span class="sep"> ·</span><span> 📞 614713869</span><br class="br-movil">
-    </p>
-    <p class="datos-contacto">
-        📮 Apartado de Correos 109, 36980<span class="sep"> ·</span><br class="br-movil">
-        📍 O Grove (Pontevedra)
-    </p>
-    <p>🌐 @cbogrove en Instagram, TikTok, YouTube, Twitch, X, Kick, Snapchat</p>
-</div>
+    <!-- BLOQUE DE CONTACTO MODIFICADO (CON NOMBRE DEL CLUB) -->
+    <div class="contacto">
+        <!-- Nombre del club (restaurado) -->
+        <p style="font-size:1.3rem; margin-bottom:0.8rem;">
+            <span class="balon-final">🏀</span> <strong>CLUB BALONCESTO O GROVE</strong>
+        </p>
+
+        <!-- Primera línea: email + WhatsApp clickable -->
+        <p class="datos-contacto">
+            📧 <a href="mailto:cbogrove75@gmail.com">cbogrove75@gmail.com</a><span class="sep"> ·</span>
+            <a href="https://wa.me/34614713869" target="_blank" style="text-decoration:none;">
+                📞 +34 614 71 38 69
+            </a><br class="br-movil">
+        </p>
+
+        <!-- Segunda línea: dirección física -->
+        <p class="datos-contacto">
+            📮 Apartado de Correos 109, 36980<span class="sep"> ·</span><br class="br-movil">
+            📍 O Grove (Pontevedra)
+        </p>
+
+        <!-- Tercera línea: Iconos de redes sociales clickables -->
+        <div class="redes-iconos">
+            <a href="https://www.instagram.com/cbogrove" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@cbogrove" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@cbogrove" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.twitch.tv/cbogrove" target="_blank"><i class="fab fa-twitch"></i></a>
+            <a href="https://x.com/cbogrove" target="_blank"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://kick.com/cbogrove" target="_blank"><i class="fas fa-video"></i></a>
+            <a href="https://www.snapchat.com/add/cbogrove" target="_blank"><i class="fab fa-snapchat"></i></a>
+        </div>
+        <div class="usuario-redes">@cbogrove</div>
+    </div>
 
     <div class="actualizacion">
         <span class="fecha-gl">Bases legais actualizadas a marzo de 2026</span><span class="sep-fecha"> · </span><span class="fecha-es">Bases legales actualizadas a marzo de 2026</span>
